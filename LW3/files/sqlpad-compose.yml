@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  sqlpad:
+    image: sqlpad/sqlpad
+    container_name: sqlpad
+    restart: always
+    environment:
+      PORT: 3000
+      SQLPAD_ADMIN: kirya.khomenok@mail.ru
+      SQLPAD_ADMIN_PASSWORD: 123321
+    ports:
+      - "3000:3000"
+    networks:
+      - sqlpad_local_bridge
+
+networks:
+  sqlpad_local_bridge:
+    driver: bridge

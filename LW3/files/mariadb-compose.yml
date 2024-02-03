@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: homenok
+      MYSQL_USER: homenok
+      MYSQL_PASSWORD: 123321
+      MYSQL_ROOT_PASSWORD: 123321
+
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mariadb_local_bridge
+
+networks:
+  mariadb_local_bridge:
+    driver: bridge
