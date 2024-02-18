@@ -13,7 +13,12 @@ services:
       - "3000:3000"
     networks:
       - sqlpad_local_bridge
+    volumes:
+      - sqlpad_data:/data
 
 networks:
   sqlpad_local_bridge:
     driver: bridge
+
+volumes:
+  sqlpad_data:
