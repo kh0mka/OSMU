@@ -10,7 +10,6 @@ services:
       MYSQL_USER: homenok
       MYSQL_PASSWORD: 123321
       MYSQL_ROOT_PASSWORD: 123321
-
     volumes:
       - mariadb_data:/var/lib/mysql
     ports:
@@ -21,3 +20,7 @@ services:
 networks:
   mariadb_local_bridge:
     driver: bridge
+
+volumes:
+  mariadb_data:
+    driver: local
